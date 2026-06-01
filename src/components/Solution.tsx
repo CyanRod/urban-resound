@@ -43,7 +43,7 @@ const Solution: React.FC = () => {
             className="rounded-2xl overflow-hidden"
           >
             <img
-              src="/panel.png"
+              src={import.meta.env.BASE_URL + 'panel.png'}
               alt="Panel acústico sostenible Urban ReSound"
               className="w-full h-full object-cover"
               style={{ maxHeight: '480px' }}
@@ -93,7 +93,7 @@ const Solution: React.FC = () => {
           className="rounded-2xl overflow-hidden relative"
         >
           <img
-            src="/materiales.png"
+            src={import.meta.env.BASE_URL + 'materiales.png'}
             alt="Los tres materiales: cuero, plástico reciclado y bioadhesivos vegetales"
             className="w-full object-cover"
             style={{ maxHeight: '380px', objectPosition: 'center' }}

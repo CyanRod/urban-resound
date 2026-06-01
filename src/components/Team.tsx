@@ -3,10 +3,10 @@ import { motion } from 'framer-motion'
 import { WordsPullUpMultiStyle } from './animations/WordsPullUpMultiStyle'
 
 const members = [
-  { firstName: 'Danny', lastName: 'Tapia', role: 'Líder del equipo', area: 'Producción e innovación', photo: '/danny.png', initials: 'DT', phrase: 'Transformamos residuos en bienestar acústico para el futuro.' },
-  { firstName: 'Melanie', lastName: 'Recalde', role: 'Diseño y sostenibilidad', area: 'Biomateriales', photo: '/melanie.png', initials: 'MR', phrase: 'Diseñamos soluciones sostenibles con impacto real en la comunidad.' },
-  { firstName: 'Anahí', lastName: 'Pillajo', role: 'Investigación y desarrollo', area: 'Área técnica', photo: '/anahi.png', initials: 'AP', phrase: 'Innovamos con biomateriales para construir ciudades más responsables.' },
-  { firstName: 'Cinthia', lastName: 'Perugachi', role: 'Impacto comunitario', area: 'Social y ambiental', photo: '/cinthia.png', initials: 'CP', phrase: 'Impulsamos el desarrollo comunitario desde la economía circular.' },
+  { firstName: 'Danny', lastName: 'Tapia', role: 'Líder del equipo', area: 'Producción e innovación', photo: import.meta.env.BASE_URL + 'danny.png', initials: 'DT', phrase: 'Transformamos residuos en bienestar acústico para el futuro.' },
+  { firstName: 'Melanie', lastName: 'Recalde', role: 'Diseño y sostenibilidad', area: 'Biomateriales', photo: import.meta.env.BASE_URL + 'melanie.png', initials: 'MR', phrase: 'Diseñamos soluciones sostenibles con impacto real en la comunidad.' },
+  { firstName: 'Anahí', lastName: 'Pillajo', role: 'Investigación y desarrollo', area: 'Área técnica', photo: import.meta.env.BASE_URL + 'anahi.png', initials: 'AP', phrase: 'Innovamos con biomateriales para construir ciudades más responsables.' },
+  { firstName: 'Cinthia', lastName: 'Perugachi', role: 'Impacto comunitario', area: 'Social y ambiental', photo: import.meta.env.BASE_URL + 'cinthia.png', initials: 'CP', phrase: 'Impulsamos el desarrollo comunitario desde la economía circular.' },
 ]
 
 const TeamCard: React.FC<(typeof members)[0]> = ({ firstName, lastName, role, area, photo, initials, phrase }) => {

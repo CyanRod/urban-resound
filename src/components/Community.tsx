@@ -44,7 +44,7 @@ const Community: React.FC = () => {
             className="rounded-2xl overflow-hidden"
           >
             <img
-              src="/economia-circular.png"
+              src={import.meta.env.BASE_URL + 'economia-circular.png'}
               alt="Diagrama de economía circular comunitaria"
               className="w-full object-cover"
               style={{ maxHeight: '440px' }}

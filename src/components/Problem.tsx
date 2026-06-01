@@ -41,7 +41,7 @@ const Problem: React.FC = () => {
               className="w-full h-full object-cover"
               style={{ maxHeight: '420px' }}
             >
-              <source src="/problema.mp4" type="video/mp4" />
+              <source src={import.meta.env.BASE_URL + 'problema.mp4'} type="video/mp4" />
             </video>
           </motion.div>
 
@@ -69,14 +69,14 @@ const Problem: React.FC = () => {
           {[
             {
               title: 'Problema ambiental',
-              img: '/problema-residuos.png',
+              img: import.meta.env.BASE_URL + 'problema-residuos.png',
               alt: 'Residuos del taller de cuero en Quisapincha',
               desc: 'Cada año grandes cantidades de residuos industriales son eliminados sin procesos adecuados de reutilización:',
               items: envItems,
             },
             {
               title: 'Problema social',
-              img: '/comunidad.png',
+              img: import.meta.env.BASE_URL + 'comunidad.png',
               alt: 'Familia de Quisapincha',
               desc: 'Quisapincha presenta un fuerte fenómeno de migración de jóvenes y adultos económicamente activos debido a:',
               items: socialItems,

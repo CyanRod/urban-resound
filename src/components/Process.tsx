@@ -3,11 +3,11 @@ import { motion } from 'framer-motion'
 import { WordsPullUpMultiStyle } from './animations/WordsPullUpMultiStyle'
 
 const steps = [
-  { num: '01', title: 'Recolección', desc: 'Recolección de residuos de cuero y plástico reciclado de talleres y comunidades de Quisapincha.', img: '/proceso1.png' },
-  { num: '02', title: 'Clasificación y limpieza', desc: 'Clasificación y limpieza minuciosa de los materiales para garantizar calidad y consistencia en el producto final.', img: '/proceso2.png' },
-  { num: '03', title: 'Trituración y procesamiento', desc: 'Trituración y procesamiento mecánico de los residuos hasta obtener la granulometría óptima para los paneles.', img: '/proceso3.png' },
-  { num: '04', title: 'Incorporación de bioadhesivos', desc: 'Mezcla homogénea de materiales con bioadhesivos sostenibles de origen vegetal, 100% naturales y libres de compuestos tóxicos.', img: '/proceso4.png' },
-  { num: '05', title: 'Prensado y secado', desc: 'Prensado en moldes estándar y secado controlado para consolidar la estructura y resistencia del panel.', img: '/proceso5.png' },
+  { num: '01', title: 'Recolección', desc: 'Recolección de residuos de cuero y plástico reciclado de talleres y comunidades de Quisapincha.', img: import.meta.env.BASE_URL + 'proceso1.png' },
+  { num: '02', title: 'Clasificación y limpieza', desc: 'Clasificación y limpieza minuciosa de los materiales para garantizar calidad y consistencia en el producto final.', img: import.meta.env.BASE_URL + 'proceso2.png' },
+  { num: '03', title: 'Trituración y procesamiento', desc: 'Trituración y procesamiento mecánico de los residuos hasta obtener la granulometría óptima para los paneles.', img: import.meta.env.BASE_URL + 'proceso3.png' },
+  { num: '04', title: 'Incorporación de bioadhesivos', desc: 'Mezcla homogénea de materiales con bioadhesivos sostenibles de origen vegetal, 100% naturales y libres de compuestos tóxicos.', img: import.meta.env.BASE_URL + 'proceso4.png' },
+  { num: '05', title: 'Prensado y secado', desc: 'Prensado en moldes estándar y secado controlado para consolidar la estructura y resistencia del panel.', img: import.meta.env.BASE_URL + 'proceso5.png' },
 ]
 
 const finalSteps = [

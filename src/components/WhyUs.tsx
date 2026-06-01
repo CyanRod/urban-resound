@@ -81,7 +81,7 @@ const WhyUs: React.FC = () => {
             className="rounded-2xl overflow-hidden"
           >
             <img
-              src="/aplicacion.jpg"
+              src={import.meta.env.BASE_URL + 'aplicacion.jpg'}
               alt="Panel acústico instalado en departamento moderno"
               className="w-full h-full object-cover"
               style={{ minHeight: '480px', maxHeight: '620px' }}
