@@ -1,0 +1,140 @@
+import React, { useState, useEffect, useRef } from 'react'
+import { Menu, X } from 'lucide-react'
+
+const navItems = [
+  { label: 'Inicio', href: '#inicio' },
+  { label: 'Problema', href: '#problema' },
+  { label: 'Solución', href: '#solucion' },
+  { label: 'Proceso', href: '#proceso' },
+  { label: 'Impacto', href: '#impacto' },
+  { label: 'ODS', href: '#ods' },
+  { label: 'Equipo', href: '#equipo' },
+  { label: 'Contacto', href: '#contacto' },
+]
+
+const Navbar: React.FC = () => {
+  const [menuOpen, setMenuOpen] = useState(false)
+  const [active, setActive] = useState('#inicio')
+  const [visible, setVisible] = useState(true)
+  const lastY = useRef(0)
+
+  useEffect(() => {
+    const onScroll = () => {
+      const y = window.scrollY
+      setVisible(y < 80 || y < lastY.current)
+      lastY.current = y
+    }
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [])
+
+  const handleNav = (href: string) => {
+    setActive(href)
+    setMenuOpen(false)
+    document.querySelector(href)?.scrollIntoView({ behavior: 'smooth' })
+  }
+
+  return (
+    <>
+      {/* Floating pill */}
+      <nav
+        className="fixed top-0 left-0 right-0 z-50 flex justify-center transition-transform duration-300"
+        style={{ transform: visible ? 'translateY(0)' : 'translateY(-120%)' }}
+      >
+        <div
+          className="bg-black border-x border-b border-white/[0.1] rounded-b-2xl md:rounded-b-3xl px-5 md:px-8 py-2.5 flex items-center gap-3 sm:gap-6 lg:gap-10"
+        >
+          {/* Logo — always visible */}
+          <button
+            onClick={() => handleNav('#inicio')}
+            className="text-sm font-medium flex-shrink-0 focus:outline-none"
+            style={{ color: '#E1E0CC', fontFamily: 'Almarai, sans-serif' }}
+          >
+            Urban Re<span style={{ opacity: 0.55 }}>Sound</span>
+          </button>
+
+          {/* Desktop nav links */}
+          <div className="hidden lg:flex items-center gap-8 xl:gap-10">
+            {navItems.map((item) => (
+              <button
+                key={item.label}
+                onClick={() => handleNav(item.href)}
+                className="text-[11px] sm:text-xs transition-colors duration-150 focus:outline-none"
+                style={{
+                  color: active === item.href ? '#E1E0CC' : 'rgba(225,224,204,0.45)',
+                  letterSpacing: '0.01em',
+                }}
+              >
+                {item.label}
+              </button>
+            ))}
+          </div>
+
+          {/* CTA */}
+          <button
+            onClick={() => handleNav('#solucion')}
+            className="hidden sm:block text-[11px] font-medium px-4 py-1.5 rounded-full border border-white/20 hover:border-primary/60 transition-colors duration-200 flex-shrink-0"
+            style={{ color: '#E1E0CC' }}
+          >
+            Conoce el proyecto
+          </button>
+
+          {/* Hamburger */}
+          <button
+            className="lg:hidden p-1 focus:outline-none flex-shrink-0"
+            onClick={() => setMenuOpen((o) => !o)}
+            style={{ color: '#E1E0CC' }}
+            aria-label={menuOpen ? 'Cerrar menú' : 'Abrir menú'}
+          >
+            {menuOpen ? <X size={17} /> : <Menu size={17} />}
+          </button>
+        </div>
+      </nav>
+
+      {/* Mobile drawer */}
+      <div
+        className="fixed top-0 right-0 bottom-0 z-40 lg:hidden transition-transform duration-300"
+        style={{
+          width: 'min(85%, 320px)',
+          backgroundColor: '#0a0a0a',
+          borderLeft: '1px solid rgba(255,255,255,0.08)',
+          transform: menuOpen ? 'translateX(0)' : 'translateX(100%)',
+          paddingTop: '5rem',
+        }}
+      >
+        <ul className="px-6 flex flex-col gap-1">
+          {navItems.map((item) => (
+            <li key={item.label}>
+              <button
+                onClick={() => handleNav(item.href)}
+                className="w-full text-left py-3 text-sm transition-colors duration-150 focus:outline-none"
+                style={{ color: active === item.href ? '#E1E0CC' : 'rgba(225,224,204,0.45)' }}
+              >
+                {item.label}
+              </button>
+            </li>
+          ))}
+          <li className="pt-4">
+            <button
+              onClick={() => handleNav('#solucion')}
+              className="w-full py-3 text-sm font-medium rounded-full border border-white/20 transition-colors duration-200"
+              style={{ color: '#E1E0CC' }}
+            >
+              Conoce el proyecto
+            </button>
+          </li>
+        </ul>
+      </div>
+
+      {menuOpen && (
+        <div
+          className="fixed inset-0 z-30 lg:hidden"
+          style={{ backgroundColor: 'rgba(0,0,0,0.6)', backdropFilter: 'blur(4px)' }}
+          onClick={() => setMenuOpen(false)}
+        />
+      )}
+    </>
+  )
+}
+
+export default Navbar
