@@ -1,14 +1,11 @@
 import React, { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
 import { motion } from 'framer-motion'
-import { ArrowLeft } from 'lucide-react'
 import { WordsPullUpMultiStyle } from '../components/animations/WordsPullUpMultiStyle'
 
 const donationItems = ['Botellas plásticas', 'Residuos de cuero', 'Retazos industriales', 'Materiales reutilizables']
 const communityUses = ['Escuelas rurales', 'Centros comunitarios', 'Espacios educativos', 'Infraestructura social', 'Comunidades andinas afectadas por frío']
 
 const DonatePage: React.FC = () => {
-  const navigate = useNavigate()
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [submitted, setSubmitted] = useState(false)
@@ -31,19 +28,7 @@ const DonatePage: React.FC = () => {
       {/* Dark overlay */}
       <div className="absolute inset-0" style={{ background: 'rgba(0,0,0,0.78)' }} />
 
-      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 py-10 sm:py-16">
-
-        {/* Back button */}
-        <motion.button
-          initial={{ opacity: 0, x: -10 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.4 }}
-          onClick={() => navigate(-1)}
-          className="flex items-center gap-2 mb-12 text-sm text-gray-400 hover:text-[#E1E0CC] transition-colors duration-200"
-        >
-          <ArrowLeft size={15} />
-          Volver
-        </motion.button>
+      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 pt-24 pb-16">
 
         {/* Header */}
         <motion.span
