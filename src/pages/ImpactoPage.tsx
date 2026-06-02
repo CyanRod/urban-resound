@@ -11,7 +11,7 @@ import Environmental from '../components/Environmental'
 import Footer from '../components/Footer'
 
 const ImpactoPage = () => (
-  <div className="bg-black pt-16">
+  <div className="bg-black [&>section:first-child]:pt-14 [&>section:first-child]:sm:pt-16 [&>section:first-child]:lg:pt-20">
     <WomenImpact />
     <Community />
     <Education />
