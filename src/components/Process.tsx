@@ -8,9 +8,6 @@ const steps = [
   { num: '03', title: 'Trituración y procesamiento', desc: 'Trituración y procesamiento mecánico de los residuos hasta obtener la granulometría óptima para los paneles.', img: import.meta.env.BASE_URL + 'proceso3.png' },
   { num: '04', title: 'Incorporación de bioadhesivos', desc: 'Mezcla homogénea de materiales con bioadhesivos sostenibles de origen vegetal, 100% naturales y libres de compuestos tóxicos.', img: import.meta.env.BASE_URL + 'proceso4.png' },
   { num: '05', title: 'Prensado y secado', desc: 'Prensado en moldes estándar y secado controlado para consolidar la estructura y resistencia del panel.', img: import.meta.env.BASE_URL + 'proceso5.png' },
-]
-
-const finalSteps = [
   { num: '06', title: 'Producción de paneles acústicos', desc: 'Paneles listos para distribución con control de calidad integral.', img: import.meta.env.BASE_URL + 'proceso6.png' },
   { num: '07', title: 'Comercialización', desc: 'Distribución B2B y B2C a constructoras, diseñadores y consumidores finales.', img: import.meta.env.BASE_URL + 'proceso7.png' },
   { num: '08', title: 'Impacto económico, social y ambiental', desc: 'Generación de empleo, reducción de residuos y beneficio comunitario medible.', img: import.meta.env.BASE_URL + 'proceso8.png' },
@@ -50,7 +47,7 @@ const Process: React.FC = () => {
           la comunidad y el medioambiente.
         </motion.p>
 
-        <div className="space-y-14 mb-14">
+        <div className="space-y-14">
           {steps.map((step, i) => (
             <div
               key={step.num}
@@ -86,34 +83,6 @@ const Process: React.FC = () => {
                 <p className="text-sm sm:text-base leading-relaxed text-gray-400">{step.desc}</p>
               </motion.div>
             </div>
-          ))}
-        </div>
-
-        <div className="grid sm:grid-cols-3 gap-5">
-          {finalSteps.map((s, i) => (
-            <motion.div
-              key={s.num}
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: i * 0.12 }}
-              className="rounded-2xl overflow-hidden bg-[#101010] border border-white/[0.08]"
-            >
-              <img
-                src={s.img}
-                alt={`Paso ${s.num}: ${s.title}`}
-                className="w-full object-cover"
-                style={{ height: '180px' }}
-              />
-              <div className="p-7 text-center">
-                <div className="inline-flex items-center gap-2 rounded-full px-4 py-1.5 mb-4 border border-white/[0.08]">
-                  <span className="text-[10px] font-medium text-primary/60">{s.num}</span>
-                  <span className="text-[10px] font-medium text-gray-500 uppercase tracking-widest">Paso {s.num}</span>
-                </div>
-                <h3 className="text-base font-normal mb-3 text-[#E1E0CC]">{s.title}</h3>
-                <p className="text-xs leading-relaxed text-gray-500">{s.desc}</p>
-              </div>
-            </motion.div>
           ))}
         </div>
 
