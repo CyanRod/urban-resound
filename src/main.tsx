@@ -2,6 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { HashRouter, Routes, Route } from 'react-router-dom'
 import Navbar from './components/Navbar'
+import PageArrows from './components/PageArrows'
 import HomePage from './pages/HomePage'
 import ProblemaPage from './pages/ProblemaPage'
 import SolucionPage from './pages/SolucionPage'
@@ -17,6 +18,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <HashRouter>
       <Navbar />
+      <PageArrows />
       <Routes>
         <Route path="/"          element={<HomePage />} />
         <Route path="/problema"  element={<ProblemaPage />} />
