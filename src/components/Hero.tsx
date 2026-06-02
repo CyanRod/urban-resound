@@ -1,4 +1,5 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { ArrowRight, Sparkles } from 'lucide-react'
 import { WordsPullUp } from './animations/WordsPullUp'
@@ -6,8 +7,7 @@ import { WordsPullUp } from './animations/WordsPullUp'
 const EASE = [0.16, 1, 0.3, 1] as const
 
 const Hero: React.FC = () => {
-  const scrollTo = (id: string) =>
-    document.querySelector(id)?.scrollIntoView({ behavior: 'smooth' })
+  const navigate = useNavigate()
 
   return (
     <section
@@ -90,7 +90,7 @@ const Hero: React.FC = () => {
                 transition={{ duration: 0.8, delay: 0.7, ease: EASE }}
               >
                 <button
-                  onClick={() => scrollTo('#solucion')}
+                  onClick={() => navigate('/solucion')}
                   className="group inline-flex items-center gap-2 bg-primary rounded-full pl-5 pr-1 py-1 font-medium text-sm sm:text-base hover:gap-3 transition-all duration-200"
                   style={{ color: '#000' }}
                 >

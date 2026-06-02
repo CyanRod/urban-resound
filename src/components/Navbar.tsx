@@ -68,15 +68,6 @@ const Navbar: React.FC = () => {
             Dona
           </button>
 
-          {/* Conoce el proyecto */}
-          <button
-            onClick={() => handleNav('/solucion')}
-            className="hidden sm:block text-[11px] font-medium px-4 py-1.5 rounded-full border border-white/20 hover:border-primary/60 transition-colors duration-200 flex-shrink-0"
-            style={{ color: '#E1E0CC' }}
-          >
-            Conoce el proyecto
-          </button>
-
           {/* Hamburger */}
           <button
             className="lg:hidden p-1 focus:outline-none flex-shrink-0"
@@ -112,20 +103,13 @@ const Navbar: React.FC = () => {
               </button>
             </li>
           ))}
-          <li className="pt-4 flex flex-col gap-2">
+          <li className="pt-4">
             <button
               onClick={() => handleNav('/dona')}
               className="w-full py-3 text-sm font-medium rounded-full bg-primary hover:opacity-90 transition-opacity duration-200"
               style={{ color: '#000' }}
             >
               Dona
-            </button>
-            <button
-              onClick={() => handleNav('/solucion')}
-              className="w-full py-3 text-sm font-medium rounded-full border border-white/20 transition-colors duration-200"
-              style={{ color: '#E1E0CC' }}
-            >
-              Conoce el proyecto
             </button>
           </li>
         </ul>
