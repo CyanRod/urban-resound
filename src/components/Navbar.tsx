@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { Menu, X } from 'lucide-react'
 
 const navItems = [
@@ -13,6 +14,7 @@ const navItems = [
 ]
 
 const Navbar: React.FC = () => {
+  const navigate = useNavigate()
   const [menuOpen, setMenuOpen] = useState(false)
   const [active, setActive] = useState('#inicio')
   const [visible, setVisible] = useState(true)
@@ -70,6 +72,15 @@ const Navbar: React.FC = () => {
             ))}
           </div>
 
+          {/* Dona CTA */}
+          <button
+            onClick={() => { setMenuOpen(false); navigate('/dona') }}
+            className="hidden sm:block text-[11px] font-medium px-4 py-1.5 rounded-full bg-primary hover:opacity-90 transition-opacity duration-200 flex-shrink-0"
+            style={{ color: '#000' }}
+          >
+            Dona
+          </button>
+
           {/* CTA */}
           <button
             onClick={() => handleNav('#solucion')}
@@ -115,6 +126,13 @@ const Navbar: React.FC = () => {
             </li>
           ))}
           <li className="pt-4">
+            <button
+              onClick={() => { setMenuOpen(false); navigate('/dona') }}
+              className="w-full py-3 text-sm font-medium rounded-full bg-primary transition-opacity duration-200 hover:opacity-90 mb-2"
+              style={{ color: '#000' }}
+            >
+              Dona
+            </button>
             <button
               onClick={() => handleNav('#solucion')}
               className="w-full py-3 text-sm font-medium rounded-full border border-white/20 transition-colors duration-200"

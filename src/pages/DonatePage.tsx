@@ -1,11 +1,14 @@
 import React, { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { motion } from 'framer-motion'
-import { WordsPullUpMultiStyle } from './animations/WordsPullUpMultiStyle'
+import { ArrowLeft } from 'lucide-react'
+import { WordsPullUpMultiStyle } from '../components/animations/WordsPullUpMultiStyle'
 
 const donationItems = ['Botellas plásticas', 'Residuos de cuero', 'Retazos industriales', 'Materiales reutilizables']
 const communityUses = ['Escuelas rurales', 'Centros comunitarios', 'Espacios educativos', 'Infraestructura social', 'Comunidades andinas afectadas por frío']
 
-const Donate: React.FC = () => {
+const DonatePage: React.FC = () => {
+  const navigate = useNavigate()
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [submitted, setSubmitted] = useState(false)
@@ -16,68 +19,89 @@ const Donate: React.FC = () => {
   }
 
   return (
-    <section
-      id="dona"
-      className="py-20 sm:py-24 lg:py-32 px-4 sm:px-6 relative overflow-hidden"
+    <div
+      className="min-h-screen relative"
       style={{
         backgroundImage: `url(${import.meta.env.BASE_URL}donacion.png)`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
+        backgroundAttachment: 'fixed',
       }}
     >
       {/* Dark overlay */}
-      <div className="absolute inset-0" style={{ background: 'rgba(0,0,0,0.82)' }} />
-      <div className="max-w-6xl mx-auto relative">
+      <div className="absolute inset-0" style={{ background: 'rgba(0,0,0,0.78)' }} />
 
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 py-10 sm:py-16">
 
+        {/* Back button */}
+        <motion.button
+          initial={{ opacity: 0, x: -10 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.4 }}
+          onClick={() => navigate(-1)}
+          className="flex items-center gap-2 mb-12 text-sm text-gray-400 hover:text-[#E1E0CC] transition-colors duration-200"
+        >
+          <ArrowLeft size={15} />
+          Volver
+        </motion.button>
+
+        {/* Header */}
+        <motion.span
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="section-label block mb-4"
+        >
+          Dona y sé parte del cambio
+        </motion.span>
+
+        <WordsPullUpMultiStyle
+          segments={[
+            { text: 'Dona residuos y construye un', className: 'text-[#E1E0CC]' },
+            { text: 'futuro sostenible.', className: 'text-gray-500' },
+          ]}
+          containerClassName="text-3xl sm:text-4xl md:text-5xl font-normal leading-[1.1] mb-5"
+        />
+
+        <motion.p
+          initial={{ opacity: 0, y: 12 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          className="text-sm sm:text-base text-gray-400 max-w-xl mb-16 leading-relaxed"
+        >
+          Si vives en Ecuador puedes apoyar a Urban ReSound mediante la donación de
+          materiales reciclables. Cada material donado será transformado en nuevos
+          paneles acústicos sostenibles mediante nuestro modelo de economía circular.
+        </motion.p>
+
+        {/* Grid */}
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-start">
+
+          {/* Left — info */}
           <motion.div
             initial={{ opacity: 0, x: -24 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
           >
-            <motion.span
-              initial={{ opacity: 0, y: 10 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="section-label block mb-4"
-            >
-              Dona y sé parte del cambio
-            </motion.span>
-            <WordsPullUpMultiStyle
-              segments={[
-                { text: 'Dona residuos y construye un', className: 'text-[#E1E0CC]' },
-                { text: 'futuro sostenible.', className: 'text-gray-500' },
-              ]}
-              containerClassName="text-2xl sm:text-3xl md:text-4xl font-normal leading-[1.15] mb-6"
-            />
-            <p className="text-sm sm:text-base mb-8 leading-relaxed text-gray-400">
-              Si vives en Ecuador puedes apoyar a Urban ReSound mediante la donación de
-              materiales reciclables. Cada material donado será transformado en nuevos
-              paneles acústicos sostenibles mediante nuestro modelo de economía circular.
-            </p>
-
             <h4 className="text-[10px] font-medium uppercase tracking-widest mb-3 text-primary/50">Materiales aceptados</h4>
-            <div className="grid grid-cols-2 gap-3 mb-8">
+            <div className="grid grid-cols-2 gap-3 mb-10">
               {donationItems.map((item) => (
                 <div
                   key={item}
-                  className="flex items-center gap-3 rounded-xl p-3 bg-white/[0.04] border border-white/[0.08]"
+                  className="flex items-center gap-3 rounded-xl p-4 bg-white/[0.05] border border-white/[0.1]"
                 >
-                  <span className="w-1 h-1 rounded-full bg-primary/40 flex-shrink-0" />
-                  <span className="text-sm text-gray-400">{item}</span>
+                  <span className="w-1.5 h-1.5 rounded-full bg-primary/50 flex-shrink-0" />
+                  <span className="text-sm text-gray-300">{item}</span>
                 </div>
               ))}
             </div>
 
-            <h4 className="text-[10px] font-medium uppercase tracking-widest mb-3 text-primary/50">Destino de los paneles desarrollados</h4>
+            <h4 className="text-[10px] font-medium uppercase tracking-widest mb-3 text-primary/50">Destino de los paneles</h4>
             <div className="flex flex-wrap gap-2">
               {communityUses.map((u) => (
                 <span
                   key={u}
-                  className="rounded-full px-3 py-1.5 text-xs text-gray-500 border border-white/[0.1]"
+                  className="rounded-full px-4 py-2 text-xs text-gray-400 border border-white/[0.12] bg-white/[0.03]"
                 >
                   {u}
                 </span>
@@ -85,12 +109,12 @@ const Donate: React.FC = () => {
             </div>
           </motion.div>
 
+          {/* Right — form */}
           <motion.div
             initial={{ opacity: 0, x: 24 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7, delay: 0.1 }}
-            className="rounded-2xl p-8 sm:p-10 bg-[#101010] border border-white/[0.08]"
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="rounded-2xl p-8 sm:p-10 bg-black/60 border border-white/[0.1] backdrop-blur-sm"
           >
             {!submitted ? (
               <>
@@ -109,7 +133,7 @@ const Donate: React.FC = () => {
                         onChange={(e) => field.setter(e.target.value)}
                         placeholder={field.placeholder}
                         required
-                        className="w-full rounded-xl px-4 py-3 text-sm outline-none transition-colors duration-200 bg-black border border-white/[0.1] text-[#E1E0CC] placeholder-gray-700 focus:border-primary/40"
+                        className="w-full rounded-xl px-4 py-3 text-sm outline-none transition-colors duration-200 bg-black/60 border border-white/[0.1] text-[#E1E0CC] placeholder-gray-700 focus:border-primary/40"
                       />
                     </div>
                   ))}
@@ -118,7 +142,7 @@ const Donate: React.FC = () => {
                     <input
                       type="text"
                       placeholder="Tu ciudad en Ecuador"
-                      className="w-full rounded-xl px-4 py-3 text-sm outline-none transition-colors duration-200 bg-black border border-white/[0.1] text-[#E1E0CC] placeholder-gray-700 focus:border-primary/40"
+                      className="w-full rounded-xl px-4 py-3 text-sm outline-none transition-colors duration-200 bg-black/60 border border-white/[0.1] text-[#E1E0CC] placeholder-gray-700 focus:border-primary/40"
                     />
                   </div>
                   <button
@@ -136,11 +160,10 @@ const Donate: React.FC = () => {
               </div>
             )}
           </motion.div>
-
         </div>
       </div>
-    </section>
+    </div>
   )
 }
 
-export default Donate
+export default DonatePage

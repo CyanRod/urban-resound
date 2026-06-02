@@ -17,7 +17,6 @@ import Environmental from './components/Environmental'
 import ODS from './components/ODS'
 import Cooperation from './components/Cooperation'
 import Vision from './components/Vision'
-import Donate from './components/Donate'
 import Team from './components/Team'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
@@ -44,7 +43,6 @@ function App() {
       <ODS />
       <Cooperation />
       <Vision />
-      <Donate />
       <Team />
       <Contact />
       <Footer />

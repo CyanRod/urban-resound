@@ -28,7 +28,7 @@ const TeamCard: React.FC<(typeof members)[0]> = ({ firstName, lastName, role, ar
       </div>
 
       {/* Photo */}
-      <div className="w-36 h-36 rounded-full mx-auto -mt-16 relative z-10 flex-shrink-0 border-4 border-[#101010] bg-[#1a1a1a]">
+      <div className="w-36 h-36 rounded-full mx-auto -mt-16 relative z-10 flex-shrink-0 border-4 border-[#101010] bg-[#1a1a1a] overflow-hidden">
         {imgError ? (
           <div className="w-full h-full rounded-full bg-[#212121] flex items-center justify-center">
             <span className="text-2xl font-normal text-primary/60">{initials}</span>
@@ -38,7 +38,8 @@ const TeamCard: React.FC<(typeof members)[0]> = ({ firstName, lastName, role, ar
             src={photo}
             alt={`${firstName} ${lastName}`}
             onError={() => setImgError(true)}
-            className="w-full h-full rounded-full object-cover object-top"
+            className="w-full h-full object-cover scale-[2] origin-top"
+            style={{ objectPosition: 'center 5%' }}
           />
         )}
       </div>
