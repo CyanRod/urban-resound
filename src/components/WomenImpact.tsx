@@ -31,8 +31,23 @@ const WomenImpact: React.FC = () => {
             { text: 'No dejar a', className: 'text-[#E1E0CC]' },
             { text: 'nadie atrás.', className: 'text-gray-500' },
           ]}
-          containerClassName="text-3xl sm:text-4xl md:text-5xl font-normal leading-[1.1] mb-14"
+          containerClassName="text-3xl sm:text-4xl md:text-5xl font-normal leading-[1.1] mb-8"
         />
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7 }}
+          className="rounded-2xl overflow-hidden mb-14"
+        >
+          <img
+            src={import.meta.env.BASE_URL + 'mujeres.png'}
+            alt="Impacto en las mujeres de Quisapincha"
+            className="w-full object-cover"
+            style={{ maxHeight: '380px', objectPosition: 'center' }}
+          />
+        </motion.div>
 
         <div className="grid lg:grid-cols-2 gap-12 items-start mb-10">
           <motion.div

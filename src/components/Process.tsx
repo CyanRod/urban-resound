@@ -11,9 +11,9 @@ const steps = [
 ]
 
 const finalSteps = [
-  { num: '06', title: 'Producción de paneles acústicos', desc: 'Paneles listos para distribución con control de calidad integral.' },
-  { num: '07', title: 'Comercialización', desc: 'Distribución B2B y B2C a constructoras, diseñadores y consumidores finales.' },
-  { num: '08', title: 'Impacto económico, social y ambiental', desc: 'Generación de empleo, reducción de residuos y beneficio comunitario medible.' },
+  { num: '06', title: 'Producción de paneles acústicos', desc: 'Paneles listos para distribución con control de calidad integral.', img: import.meta.env.BASE_URL + 'proceso6.png' },
+  { num: '07', title: 'Comercialización', desc: 'Distribución B2B y B2C a constructoras, diseñadores y consumidores finales.', img: import.meta.env.BASE_URL + 'proceso7.png' },
+  { num: '08', title: 'Impacto económico, social y ambiental', desc: 'Generación de empleo, reducción de residuos y beneficio comunitario medible.', img: import.meta.env.BASE_URL + 'proceso8.png' },
 ]
 
 const Process: React.FC = () => {
@@ -97,14 +97,22 @@ const Process: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: i * 0.12 }}
-              className="rounded-2xl p-7 text-center bg-[#101010] border border-white/[0.08]"
+              className="rounded-2xl overflow-hidden bg-[#101010] border border-white/[0.08]"
             >
-              <div className="inline-flex items-center gap-2 rounded-full px-4 py-1.5 mb-4 border border-white/[0.08]">
-                <span className="text-[10px] font-medium text-primary/60">{s.num}</span>
-                <span className="text-[10px] font-medium text-gray-500 uppercase tracking-widest">Paso {s.num}</span>
+              <img
+                src={s.img}
+                alt={`Paso ${s.num}: ${s.title}`}
+                className="w-full object-cover"
+                style={{ height: '180px' }}
+              />
+              <div className="p-7 text-center">
+                <div className="inline-flex items-center gap-2 rounded-full px-4 py-1.5 mb-4 border border-white/[0.08]">
+                  <span className="text-[10px] font-medium text-primary/60">{s.num}</span>
+                  <span className="text-[10px] font-medium text-gray-500 uppercase tracking-widest">Paso {s.num}</span>
+                </div>
+                <h3 className="text-base font-normal mb-3 text-[#E1E0CC]">{s.title}</h3>
+                <p className="text-xs leading-relaxed text-gray-500">{s.desc}</p>
               </div>
-              <h3 className="text-base font-normal mb-3 text-[#E1E0CC]">{s.title}</h3>
-              <p className="text-xs leading-relaxed text-gray-500">{s.desc}</p>
             </motion.div>
           ))}
         </div>

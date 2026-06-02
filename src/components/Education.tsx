@@ -40,11 +40,26 @@ const Education: React.FC = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="text-sm sm:text-base text-gray-500 max-w-xl mb-14"
+          className="text-sm sm:text-base text-gray-500 max-w-xl mb-8"
         >
           Urban ReSound trabajará junto a ONG, fundaciones y organismos de cooperación
           internacional para amplificar el impacto social generado por el proyecto.
         </motion.p>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7 }}
+          className="rounded-2xl overflow-hidden mb-14"
+        >
+          <img
+            src={import.meta.env.BASE_URL + 'educacion.png'}
+            alt="Educación y desarrollo comunitario"
+            className="w-full object-cover"
+            style={{ maxHeight: '380px', objectPosition: 'center' }}
+          />
+        </motion.div>
 
         <div className="grid lg:grid-cols-2 gap-12 items-start">
           <motion.div
