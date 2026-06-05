@@ -12,6 +12,7 @@ import ODSPage from './pages/ODSPage'
 import EquipoPage from './pages/EquipoPage'
 import ContactoPage from './pages/ContactoPage'
 import DonatePage from './pages/DonatePage'
+import 'leaflet/dist/leaflet.css'
 import './styles/index.css'
 
 ReactDOM.createRoot(document.getElementById('root')!).render(

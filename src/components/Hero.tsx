@@ -91,12 +91,12 @@ const Hero: React.FC = () => {
               >
                 <button
                   onClick={() => navigate('/solucion')}
-                  className="group inline-flex items-center gap-2 bg-primary rounded-full pl-5 pr-1 py-1 font-medium text-sm sm:text-base hover:gap-3 transition-all duration-200"
-                  style={{ color: '#000' }}
+                  className="group inline-flex items-center gap-2 rounded-full pl-5 pr-1 py-1 font-medium text-sm sm:text-base hover:gap-3 transition-all duration-200"
+                  style={{ background: '#C8914A', color: '#000' }}
                 >
                   Conoce el proyecto
                   <span className="bg-black rounded-full w-9 h-9 sm:w-10 sm:h-10 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-200">
-                    <ArrowRight size={15} className="text-primary -rotate-45" />
+                    <ArrowRight size={15} style={{ color: '#C8914A' }} className="-rotate-45" />
                   </span>
                 </button>
               </motion.div>

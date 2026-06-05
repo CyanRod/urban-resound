@@ -32,8 +32,8 @@ const Footer: React.FC = () => {
             <h3 className="text-xl font-medium mb-3" style={{ color: '#E1E0CC' }}>
               Urban Re<span style={{ opacity: 0.45 }}>Sound</span>
             </h3>
-            <p className="text-sm leading-relaxed mb-4 text-gray-500">
-              Transformando residuos en ciudades sostenibles.
+            <p className="font-sans font-medium text-sm leading-relaxed mb-4" style={{ color: 'rgba(200,145,74,0.7)' }}>
+              "Transformando residuos en ciudades sostenibles."
             </p>
             <p className="text-sm leading-relaxed mb-6 text-gray-600">
               Construyendo oportunidades mediante innovación, sostenibilidad y desarrollo comunitario.
@@ -48,7 +48,7 @@ const Footer: React.FC = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.7, delay: 0.1 }}
           >
-            <h4 className="text-[10px] font-medium uppercase tracking-widest mb-6 text-primary/60">
+            <h4 className="text-[10px] font-medium uppercase tracking-widest mb-6" style={{ color: 'rgba(200,145,74,0.6)' }}>
               Navegación
             </h4>
             <ul className="grid grid-cols-2 gap-2">
@@ -56,7 +56,7 @@ const Footer: React.FC = () => {
                 <li key={link.label}>
                   <button
                     onClick={() => scrollTo(link.href)}
-                    className="text-xs text-gray-500 hover:text-primary transition-colors duration-150 focus:outline-none"
+                    className="text-xs text-gray-500 hover:text-[#C8914A] transition-colors duration-150 focus:outline-none"
                   >
                     {link.label}
                   </button>
@@ -71,13 +71,13 @@ const Footer: React.FC = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.7, delay: 0.2 }}
           >
-            <h4 className="text-[10px] font-medium uppercase tracking-widest mb-6 text-primary/60">
+            <h4 className="text-[10px] font-medium uppercase tracking-widest mb-6" style={{ color: 'rgba(200,145,74,0.6)' }}>
               Compromisos
             </h4>
             <div className="space-y-3">
               {badges.map((b) => (
                 <div key={b} className="flex items-center gap-3">
-                  <span className="w-1 h-1 rounded-full bg-primary/40 flex-shrink-0" />
+                  <span className="w-1 h-1 rounded-full flex-shrink-0" style={{ background: 'rgba(200,145,74,0.5)' }} />
                   <span className="text-xs text-gray-500">{b}</span>
                 </div>
               ))}

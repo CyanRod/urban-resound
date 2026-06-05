@@ -1,7 +1,7 @@
 .section-label {
-  font-size: 0.65rem;
-  font-weight: 400;
-  letter-spacing: 0.22em;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: rgba(222, 219, 200, 0.55);
+  color: rgba(222, 219, 200, 0.6);
 }

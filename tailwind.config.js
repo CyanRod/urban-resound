@@ -4,11 +4,11 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: '#DEDBC8',
+        primary: '#C8914A',
       },
       fontFamily: {
-        sans: ['Almarai', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'sans-serif'],
-        serif: ['"Instrument Serif"', 'serif'],
+        sans: ['"DM Sans"', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
+        serif: ['"DM Sans"', 'Georgia', 'serif'],
       },
     },
   },

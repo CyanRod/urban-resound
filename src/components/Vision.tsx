@@ -26,6 +26,17 @@ const Vision: React.FC = () => {
           Visión 2030
         </motion.span>
 
+        <motion.p
+          initial={{ opacity: 0, y: 12 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.12 }}
+          className="font-sans font-medium text-base sm:text-lg max-w-xl mb-4"
+          style={{ color: 'rgba(200,145,74,0.75)' }}
+        >
+          Un sueño que nació en Quisapincha y quiere llegar a toda Latinoamérica.
+        </motion.p>
+
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 mt-10">
           <motion.div
             initial={{ opacity: 0, x: -24 }}
@@ -64,15 +75,16 @@ const Vision: React.FC = () => {
           >
             <span className="section-label block mb-6">Nuestra Misión</span>
             <div
-              className="rounded-2xl p-8 sm:p-10 bg-[#101010] border border-white/[0.08]"
+              className="rounded-2xl p-8 sm:p-10"
+              style={{ background: 'rgba(200,145,74,0.05)', border: '1px solid rgba(200,145,74,0.2)' }}
             >
-              <blockquote className="text-lg sm:text-xl font-normal text-[#E1E0CC] leading-relaxed mb-8">
+              <blockquote className="font-sans font-medium text-lg sm:text-xl text-[#E8E6D4] leading-relaxed mb-8">
                 "Transformamos residuos de cuero, plástico reciclado y bioadhesivos sostenibles
                 de origen vegetal en paneles acústicos sostenibles mediante procesos innovadores
                 y responsables, promoviendo{' '}
-                <em className="font-serif italic text-gray-400">
+                <span className="font-medium text-gray-400">
                   economía circular, bienestar comunitario, inclusión social y construcción sostenible.
-                </em>
+                </span>
                 "
               </blockquote>
 

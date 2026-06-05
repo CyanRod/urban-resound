@@ -62,8 +62,8 @@ const Navbar: React.FC = () => {
           {/* Dona CTA */}
           <button
             onClick={() => handleNav('/dona')}
-            className="hidden sm:block text-[11px] font-medium px-4 py-1.5 rounded-full bg-primary hover:opacity-90 transition-opacity duration-200 flex-shrink-0"
-            style={{ color: '#000' }}
+            className="hidden sm:block text-[11px] font-medium px-4 py-1.5 rounded-full hover:opacity-90 transition-opacity duration-200 flex-shrink-0"
+            style={{ background: '#C8914A', color: '#000' }}
           >
             Dona
           </button>
@@ -106,8 +106,8 @@ const Navbar: React.FC = () => {
           <li className="pt-4">
             <button
               onClick={() => handleNav('/dona')}
-              className="w-full py-3 text-sm font-medium rounded-full bg-primary hover:opacity-90 transition-opacity duration-200"
-              style={{ color: '#000' }}
+              className="w-full py-3 text-sm font-medium rounded-full hover:opacity-90 transition-opacity duration-200"
+              style={{ background: '#C8914A', color: '#000' }}
             >
               Dona
             </button>

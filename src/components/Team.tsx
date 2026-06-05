@@ -84,8 +84,20 @@ const Team: React.FC = () => {
             { text: 'Personas que transforman residuos en', className: 'text-[#E1E0CC]' },
             { text: 'bienestar acústico.', className: 'text-gray-500' },
           ]}
-          containerClassName="text-3xl sm:text-4xl md:text-5xl font-normal leading-[1.1] mb-5"
+          containerClassName="text-3xl sm:text-4xl md:text-5xl font-normal leading-[1.1] mb-4"
         />
+
+        <motion.p
+          initial={{ opacity: 0, y: 12 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.12 }}
+          className="font-sans font-medium text-base sm:text-lg max-w-xl mb-6"
+          style={{ color: 'rgba(200,145,74,0.75)' }}
+        >
+          Cuatro estudiantes con una misión: demostrar que la innovación
+          más poderosa nace del corazón de una comunidad.
+        </motion.p>
 
         <motion.div
           initial={{ opacity: 0, y: 12 }}
@@ -124,7 +136,7 @@ const Team: React.FC = () => {
           transition={{ duration: 0.7 }}
           className="mt-14 text-center"
         >
-          <p className="font-serif italic text-gray-500 max-w-lg mx-auto leading-relaxed text-base sm:text-lg">
+          <p className="font-sans font-medium text-gray-500 max-w-lg mx-auto leading-relaxed text-base sm:text-lg">
             "Estudiantes comprometidos con transformar la realidad de Quisapincha
             a través de la ciencia, la innovación y el impacto social."
           </p>

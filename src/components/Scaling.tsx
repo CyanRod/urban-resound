@@ -97,9 +97,9 @@ const Scaling: React.FC = () => {
           <p className="text-lg sm:text-xl font-normal text-[#E1E0CC] max-w-3xl mx-auto leading-snug">
             El objetivo es demostrar que la economía circular puede convertirse en una herramienta
             real de{' '}
-            <em className="font-serif italic text-gray-400">
+            <span className="font-medium text-gray-400">
               desarrollo territorial para comunidades vulnerables de América Latina.
-            </em>
+            </span>
           </p>
         </motion.div>
 
